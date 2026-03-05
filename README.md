@@ -3,6 +3,10 @@
 Real-time AI scene description for live video streams. Frames are sent to a local [Ollama](https://ollama.com) instance running the [Moondream](https://ollama.com/library/moondream) vision model, and the resulting description is overlaid on a browser-accessible video dashboard with optional text-to-speech.
 
 
+## Demo
+
+[![EdgeNarrator Demo](https://img.youtube.com/vi/LHt7xKSdf30/maxresdefault.jpg)](https://youtu.be/LHt7xKSdf30)
+
 
 ## Features
 

@@ -3,7 +3,7 @@
 Real-time AI scene description for live video streams. Frames are sent to a local [Ollama](https://ollama.com) instance running the [Moondream](https://ollama.com/library/moondream) vision model, and the resulting description is overlaid on a browser-accessible video dashboard with optional text-to-speech.
 
 
-## Demo
+## Demo(On Nvidia Jetson Orin Nano(8GB))
 
 [![EdgeNarrator Demo](https://img.youtube.com/vi/LHt7xKSdf30/maxresdefault.jpg)](https://youtu.be/LHt7xKSdf30)
 
@@ -30,7 +30,7 @@ Real-time AI scene description for live video streams. Frames are sent to a loca
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/EdgeNarrator.git
+git clone https://github.com/torabshaikh/EdgeNarrator.git
 cd EdgeNarrator
 python -m venv .venv
 source .venv/bin/activate

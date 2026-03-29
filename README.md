@@ -32,19 +32,26 @@ Real-time scene description for live video streams. Frames are analyzed by a loc
 ```bash
 git clone https://github.com/torabshaikh/EdgeNarrator.git
 cd EdgeNarrator
-python -m venv .venv
-source .venv/bin/activate
-pip install opencv-python flask
 ```
 
-Install llama-cpp-python with CUDA support:
+Then install dependencies. The Makefile detects your GPU's compute capability automatically:
 
 ```bash
-# Standard (x86_64)
-CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python
+make install          # x86_64 — auto-detects CUDA architecture
+make install-jetson   # Jetson Orin Nano (sm_87)
+```
 
-# Jetson Orin (sm_87)
-CMAKE_ARGS="-DGGML_CUDA=on -DCMAKE_CUDA_ARCHITECTURES=87" pip install llama-cpp-python
+To verify the detected architecture before installing:
+
+```bash
+nvidia-smi --query-gpu=compute_cap --format=csv,noheader
+# e.g. "8.6" → sm_86 (RTX 30xx)
+```
+
+Or pass it explicitly:
+
+```bash
+make install CUDA_ARCH=86
 ```
 
 ---
@@ -54,7 +61,7 @@ CMAKE_ARGS="-DGGML_CUDA=on -DCMAKE_CUDA_ARCHITECTURES=87" pip install llama-cpp-
 Model files are not included in this repo. Download from Hugging Face:
 
 ```bash
-pip install huggingface-hub
+uv add huggingface-hub
 huggingface-cli download vikhyatk/moondream2-gguf \
     moondream2-text-model-f16.gguf \
     moondream2-mmproj-f16.gguf \

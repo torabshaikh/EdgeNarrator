@@ -62,7 +62,7 @@ Model files are not included in this repo. Download from Hugging Face:
 
 ```bash
 uv add huggingface-hub
-huggingface-cli download vikhyatk/moondream2-gguf \
+hf download moondream/moondream2-gguf \
     moondream2-text-model-f16.gguf \
     moondream2-mmproj-f16.gguf \
     --local-dir models/
